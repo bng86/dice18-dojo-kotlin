@@ -20,6 +20,15 @@ class Score {
                         }
 
                     }
+                    3 -> {
+                        var value: Int = 0
+                        dices.groupBy { it.number }.forEach {
+                            if (it.value.size != 2) {
+                                value += it.value[0].number
+                            }
+                        }
+                        return value
+                    }
                     4 -> return 0
                     else -> return -1
 
