@@ -67,4 +67,16 @@ class DiceScoreTest {
         val expect = 0
         Assert.assertEquals(expect, actual)
     }
+
+    @Test
+    fun test_cal_score(){
+        val input = listOf(
+            Dice(6),
+            Dice(6),
+            Dice(1),
+            Dice(2))
+        val actual = Score.value(input)
+        val expect = 3
+        Assert.assertEquals(expect, actual)
+    }
 }
