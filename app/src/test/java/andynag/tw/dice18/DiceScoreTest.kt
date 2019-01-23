@@ -56,6 +56,15 @@ class DiceScoreTest {
         Assert.assertEquals(expect, actual)
     }
 
-
-
+    @Test
+    fun test_3_same() {
+        val input = listOf(
+            Dice(6),
+            Dice(6),
+            Dice(6),
+            Dice(2))
+        val actual = Score.value(input)
+        val expect = 0
+        Assert.assertEquals(expect, actual)
+    }
 }

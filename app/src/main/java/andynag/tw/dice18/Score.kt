@@ -11,13 +11,17 @@ class Score {
                 return when(dices.distinct().size) {
                     1 -> return dices[0].number + DICE_17
                     2 -> {
-                        if(dices.contains(Dice(6))) {
+                        if(dices.groupBy { it.number }.any{ it.value.size == 3}){
+                            return 0
+                        }else if(dices.contains(Dice(6))) {
                             return DICE_17
                         } else {
                             return -1
                         }
 
-                    } else -> return -1
+                    }
+                    4 -> return 0
+                    else -> return -1
 
                 }
 
