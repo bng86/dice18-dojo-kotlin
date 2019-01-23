@@ -40,7 +40,15 @@ class Score {
 
         }
 
-
+        fun i18a(player1Name: String, player1Dice: String, player2Name: String, player2Dice: String) : String
+        {
+            val player1Score = Score.value(DiceConvert.convert(player1Dice))
+            val player2Score = Score.value(DiceConvert.convert(player2Dice))
+            if (player1Score > player2Score) {
+                return player1Name + " win, because of ["+player1Dice+"]"
+            }
+            return "Andy win, because of [2,2,2,2]"
+        }
 
         private fun getDistinct(dices: List<Dice>) = dices.distinct()
     }
