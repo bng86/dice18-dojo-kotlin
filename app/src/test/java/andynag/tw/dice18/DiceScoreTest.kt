@@ -6,58 +6,57 @@ import org.junit.Test
 class DiceScoreTest {
 
     @Test
-    fun test_dices_0() {
+    fun `1, 2, 3, 4 score should be 0`() {
         val input = "1,2,3,4"
         val dices = DiceConvert.convert(input)
         Assert.assertEquals(0, Score.value(dices))
     }
 
     @Test
-    fun test_dices_score_3() {
-        // TODO help me
-//        val input = "1,2,3,3"
-//        val dices = DiceConvert.convert(input)
-//        Assert.assertEquals(3, Score.value(dices))
+    fun `1, 2, 3, 3 score should be 3`() {
+        val input = "1,2,3,3"
+        val dices = DiceConvert.convert(input)
+        Assert.assertEquals(3, Score.value(dices))
     }
 
     @Test
-    fun `1,1 ,1, 1 should be 19`() {
+    fun `1, 1, 1, 1 should be 19`() {
         val input = listOf(Dice(1),
             Dice(1),
             Dice(1),
             Dice(1))
         val actual = Score.value(input)
-        val expect = Score.DICE_17 + 1
+        val expect = Score.DICE_18 + 1
 
         Assert.assertEquals(expect, actual)
     }
 
     @Test
-    fun `2,2,2 ,2,  should be 20`() {
+    fun `2, 2, 2, 2 score should be 20`() {
         val input = listOf(Dice(2),
             Dice(2),
             Dice(2),
             Dice(2))
         val actual = Score.value(input)
-        val expect = Score.DICE_17 + 2
+        val expect = Score.DICE_18 + 2
 
         Assert.assertEquals(expect, actual)
     }
 
     @Test
-    fun `test_this_is_18la`() {
+    fun `6, 6, 1, 1 score should be 18`() {
         val input = listOf(
             Dice(6),
             Dice(6),
             Dice(1),
             Dice(1))
         val actual = Score.value(input)
-        val expect = Score.DICE_17
+        val expect = Score.DICE_18
         Assert.assertEquals(expect, actual)
     }
 
     @Test
-    fun test_3_same() {
+    fun `6, 6, 6, 2 score should be 0`() {
         val input = listOf(
             Dice(6),
             Dice(6),
@@ -69,7 +68,7 @@ class DiceScoreTest {
     }
 
     @Test
-    fun test_cal_score(){
+    fun `6, 6, 1, 2 score should be 3`(){
         val input = listOf(
             Dice(6),
             Dice(6),
