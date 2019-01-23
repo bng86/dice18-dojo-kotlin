@@ -18,4 +18,5 @@ class DiceGroupConvertTest {
 
         Assert.assertEquals(expected, actual)
     }
+
 }
