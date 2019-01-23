@@ -104,5 +104,15 @@ class DiceScoreTest {
         Assert.assertEquals(expect, actual)
     }
 
-
+    @Test
+    fun `2, 2, 3, 3 score should be 6`(){
+        val input = listOf(
+            Dice(2),
+            Dice(2),
+            Dice(3),
+            Dice(3))
+        val actual = Score.value(input)
+        val expect = 6
+        Assert.assertEquals(expect, actual)
+    }
 }

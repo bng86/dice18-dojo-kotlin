@@ -18,7 +18,7 @@ class Score {
                     } else if (dices.contains(Dice(6))) {
                         return DICE_18
                     } else {
-                        return -1
+                        return (diceGroup.map { it.value }.maxBy { it[0].number }?.get(0)?.number ?: -1) * 2
                     }
 
                 }
