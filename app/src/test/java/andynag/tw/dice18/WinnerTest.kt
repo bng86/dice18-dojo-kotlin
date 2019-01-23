@@ -1,5 +1,4 @@
 package andynag.tw.dice18
-
 import org.junit.Assert
 import org.junit.Test
 
@@ -26,7 +25,19 @@ class WinnerTest {
         val winnerName = "Rick"
         val loserName = "Andy"
 
-        val expected = "Andy win, because of [6,6,2,2]"
+        val expected = "Rick win, because of [6,6,2,2]"
+        val result = Score.i18a(winnerName, winner, loserName, loser)
+        Assert.assertEquals(expected, result)
+    }
+
+    @Test
+    fun `Same score`() {
+        val winner = "6,6,2,2"
+        val loser = "6,6,3,3"
+        val winnerName = "Rick"
+        val loserName = "Andy"
+
+        val expected = "draw"
         val result = Score.i18a(winnerName, winner, loserName, loser)
         Assert.assertEquals(expected, result)
     }

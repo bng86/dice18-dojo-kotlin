@@ -44,7 +44,32 @@ class DiceScoreTest {
     }
 
     @Test
-    fun `6, 6, 1, 1 score should be 18`() {
+    fun `3, 3, 3, 3 score should be 21`() {
+        val input = listOf(Dice(3),
+            Dice(3),
+            Dice(3),
+            Dice(3))
+        val actual = Score.value(input)
+        val expect = Score.DICE_18 + 3
+
+        Assert.assertEquals(expect, actual)
+    }
+
+    @Test
+    fun `4, 4, 4, 4 score should be 22`() {
+        val input = listOf(Dice(4),
+            Dice(4),
+            Dice(4),
+            Dice(4))
+        val actual = Score.value(input)
+        val expect = Score.DICE_18 + 4
+
+        Assert.assertEquals(expect, actual)
+    }
+
+
+    @Test
+    fun `6, 6, 1, 1 score should be 12`() {
         val input = listOf(
             Dice(6),
             Dice(6),

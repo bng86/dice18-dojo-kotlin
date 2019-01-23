@@ -8,10 +8,9 @@ class Score {
 
         fun value(dices: List<Dice>): Int {
 
-            val distinctSize = dices.distinct().size
             val diceGroup = dices.groupBy { it.number }
 
-            return when (distinctSize) {
+            return when (diceGroup.size) {
                 1 -> return dices[0].number + DICE_18
                 2 -> {
                     if (diceGroup.any { it.value.size == 3 }) {
@@ -42,8 +41,10 @@ class Score {
             val player2Score = Score.value(DiceConvert.convert(player2Dice))
             return if (player1Score > player2Score) {
                 "$player1Name win, because of [$player1Dice]"
-            } else {
+            } else if (player1Score < player2Score) {
                 "$player2Name win, because of [$player2Dice]"
+            } else {
+                "draw"
             }
         }
 
