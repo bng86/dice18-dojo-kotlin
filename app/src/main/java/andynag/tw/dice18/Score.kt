@@ -40,6 +40,8 @@ class Score {
 
         }
 
+
+
         private fun getDistinct(dices: List<Dice>) = dices.distinct()
     }
 }
